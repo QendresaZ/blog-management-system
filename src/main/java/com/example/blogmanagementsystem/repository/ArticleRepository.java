@@ -14,4 +14,6 @@ import java.util.Optional;
 public interface ArticleRepository extends ElasticsearchRepository<Article, String> {
     Optional<Article> findByLink(String link);
     Page<Article> findByTitleContainingAndBodyContaining(String title, String body, Pageable pageable);
+
+    Page<Article> findAll(Integer page, Integer size);
 }
